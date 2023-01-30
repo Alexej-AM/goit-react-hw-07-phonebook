@@ -39,7 +39,7 @@ const Form = () => {
       alert(`${name} is already in contacts`);      
     } 
       else { 
-      alert(`${name} is already in contacts`);    
+      alert(`${name} has been added`);    
       return(dispatch(addContact({name, phone}))
       )  
     }             
