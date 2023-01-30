@@ -34,13 +34,14 @@ const Form = () => {
   
   const chekingContacts = () => {
     const findContact = items.find((item) => item.name === name);
-    const findNumber = items.find((item) => item.phone === phone);
 
     if (findContact) { 
       alert(`${name} is already in contacts`);      
     } 
-      else if (findNumber) { 
-      alert(`${phone} is already in contacts`);      
+      else { 
+      alert(`${name} is already in contacts`);    
+      return(dispatch(addContact({name, phone}))
+      )  
     }             
   };
 
@@ -48,7 +49,6 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     chekingContacts()
-    dispatch(addContact({name, phone}));
     setName('');
     setPhone('');
       };
